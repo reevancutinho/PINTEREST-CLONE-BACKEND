@@ -4,6 +4,7 @@ const morgan= require('morgan');
 const bodyparser=require('body-parser');
 const path=require('path');
 const app=express();
+var cors = require('cors');
 
 const connectDB=require('./server/database/connection');
 
@@ -14,6 +15,8 @@ const PORT=process.env.PORT||5000;
 
 //log requests 
 app.use(morgan('tiny'));
+
+app.use(cors());
 
 //mongodb connection
 connectDB();

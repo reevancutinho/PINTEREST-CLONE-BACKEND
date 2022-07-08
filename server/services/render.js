@@ -15,6 +15,14 @@ exports.add_pin=(req,res)=>{
 }
 
 exports.update_pin=(req,res)=>{
+
+    res.setHeader("Access-Control-Allow-Origin", "*")
+res.setHeader("Access-Control-Allow-Credentials", "true");
+res.setHeader("Access-Control-Max-Age", "1800");
+res.setHeader("Access-Control-Allow-Headers", "content-type");
+res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+
+
     axios.get(`http://localhost:${process.env.PORT}/api/pins`, { params : { id : req.query.id }})
     .then(function(pinsdata){
         res.render("update_pin", { pin : pinsdata.data})
