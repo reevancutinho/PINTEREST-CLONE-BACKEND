@@ -1,7 +1,7 @@
 const axios=require('axios');
 
 exports.homeRoute=(req,res)=>{
-    axios.get('http://localhost:3000/api/pins')
+    axios.get(`http://localhost:${process.env.PORT}/api/pins`)
     .then(function(response){
         res.render('index', { pins : response.data });
     })
@@ -15,7 +15,7 @@ exports.add_pin=(req,res)=>{
 }
 
 exports.update_pin=(req,res)=>{
-    axios.get('http://localhost:3000/api/pins', { params : { id : req.query.id }})
+    axios.get(`http://localhost:${process.env.PORT}/api/pins`, { params : { id : req.query.id }})
     .then(function(pinsdata){
         res.render("update_pin", { pin : pinsdata.data})
     })
