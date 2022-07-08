@@ -1,0 +1,42 @@
+
+<div class="card-container">
+<% for (var i = 0; i <pins.length; i++) {%>
+
+<!-- <tr>
+    <td><%=i+1%></td>
+    <td><%=pins[i].title%></td>
+
+    <td><%=pins[i].description%></td>
+    <td><%=pins[i].destination%></td>
+    <td><%=pins[i].image%></td>
+    <td><%=pins[i].pin_size%></td>
+    <td>
+        <a href="/update-pin?id=<%=pins[i]._id%>" class="btn border-shadow update">
+            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+        </a>
+        <a class="btn border-shadow delete" data-id=<%= pins[i]._id%>>
+            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    </td>
+</tr> -->
+
+<div class="card">
+    <img src="<%=pins[i].image%>" alt="image" width="240px" height="300px">
+    <div class="card-body">
+        <h4><b><%=pins[i].title%></b></h4> 
+        <p><%=pins[i].description%></p>
+        <p><%=pins[i].destination%></p>
+        <div class="card-actions">
+        <a href="/update-pin?id=<%=pins[i]._id%>" class="btn border-shadow update">
+            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+        </a>
+        <a class="btn border-shadow delete" data-id=<%= pins[i]._id%>>
+            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    </div>
+    </div>
+</div>
+
+<%}%>
+
+</div>
