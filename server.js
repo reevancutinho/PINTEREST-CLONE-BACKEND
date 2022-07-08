@@ -10,7 +10,7 @@ const connectDB=require('./server/database/connection');
 //this will help to get port from config file
 dotenv.config({path:'config.env'})
 //if mentioned port number is not there then by default 8080 will be the port number
-const PORT=process.env.PORT||8080
+const PORT=process.env.PORT||5000;
 
 //log requests 
 app.use(morgan('tiny'));
